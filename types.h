@@ -4,6 +4,9 @@
 #define DIM 4
 
 int grid[DIM][DIM]; // intended as the grid for our data
-int * gridPointer = &grid;
+
+
+// basic functions of the game -> to connect with proper callbacks
+void init_grid(int arr[][DIM]);
 
 #endif // TYPES_H
