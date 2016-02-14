@@ -14,7 +14,7 @@ Window {
         id: canvas3d
         anchors.fill: parent
         focus: true
-
+/*
         onInitializeGL: {
             GLCode.initializeGL(canvas3d);
         }
@@ -26,5 +26,6 @@ Window {
         onResizeGL: {
             GLCode.resizeGL(canvas3d);
         }
+        */
     }
 }
