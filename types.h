@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define DIM 4
+#define DIM 4 // 4x4 grid
 
 static int mat[DIM][DIM];
 int temp1[DIM];
@@ -13,7 +13,6 @@ int temp2[DIM];
 int temp3[DIM];
 int temp4[DIM];
 int choice = 0;
-int grid[DIM][DIM];
 
 
 // basic furctions of the game -> to connect with proper callbacks
