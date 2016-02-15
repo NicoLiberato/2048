@@ -1,31 +1,81 @@
 import QtQuick 2.4
 import QtCanvas3D 1.0
+import QtQuick.Layouts 1.2
+import QtQuick.Controls 1.4
 import QtQuick.Window 2.2
 
 import "glcode.js" as GLCode
 
-Window {
+ApplicationWindow {
     title: qsTr("2048")
-    width: 1280
-    height: 768
+    id: game
+    width: 320
+    height: 340
     visible: true
 
-    Canvas3D {
-        id: canvas3d
-        anchors.fill: parent
-        focus: true
-/*
-        onInitializeGL: {
-            GLCode.initializeGL(canvas3d);
+
+    menuBar: MenuBar {
+        Menu {
+            title: "Game"
+            MenuItem { text: "Start a new game" }
+            MenuItem { text: "exit"; onTriggered: Qt.quit();}
+
         }
 
-        onPaintGL: {
-            GLCode.paintGL(canvas3d);
+        Menu {
+            title: "About"
+            MenuItem { text: "About" }
+            MenuItem { text: "Author"}
         }
 
-        onResizeGL: {
-            GLCode.resizeGL(canvas3d);
-        }
-        */
     }
+
+
+    Rectangle {
+        width: 500 ; height: 600; color: "black"
+
+        Grid {
+            x: 1; y: 2
+            rows: 4; columns: 4; spacing: 10
+
+            Repeater { model: 24
+                Rectangle { width: 70; height: 70
+                    color: "lightgreen"
+
+                    Text { text: "0"
+                        font.pointSize: 30
+                        anchors.centerIn: parent } }
+            }
+
+        }
+    }
+/*
+    Row {
+        spacing: 4
+        anchors.bottom: parent.horizontalCenter
+
+        Button {
+            text: "press < for left"
+            //pressed: game.difficulty == 1.0
+            //onClicked: { game.difficulty = 1.0 }
+        }
+        Button {
+            text: "press > for left"
+            //pressed: game.difficulty == 0.8
+            onClicked: { game.difficulty = 0.8 }
+        }
+        Button {
+            text: "press + for up"
+            //pressed: game.difficulty == 0.2
+            onClicked: { game.difficulty = 0.2 }
+        }
+        Button {
+            text: "press - for down"
+            //pressed: game.difficulty == 0.2
+            onClicked: { game.difficulty = 0.2 }
+        }
+
+    }
+*/
+
 }
