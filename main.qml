@@ -3,7 +3,7 @@ import QtCanvas3D 1.0
 import QtQuick.Layouts 1.2
 import QtQuick.Controls 1.4
 import QtQuick.Window 2.2
-import QtQuick 2.3
+
 
 import "glcode.js" as GLCode
 
@@ -40,112 +40,112 @@ ApplicationWindow {
             rows: 4; columns: 4; spacing: 10
 
 
-                Rectangle { id: _00; width: 70; height: 70
+                Rectangle { objectName: "0*"; width: 70; height: 70
                     color: "lightgreen"
 
                     Text { text: "0"
                         font.pointSize: 30
                         anchors.centerIn: parent } }
 
-                Rectangle { id: _01; width: 70; height: 70
+                Rectangle { objectName: "01"; width: 70; height: 70
                     color: "lightgreen"
 
                     Text { text: "0"
                         font.pointSize: 30
                         anchors.centerIn: parent } }
 
-                Rectangle { id: _02; width: 70; height: 70
+                Rectangle { objectName: "02"; width: 70; height: 70
                     color: "lightgreen"
 
                     Text { text: "0"
                         font.pointSize: 30
                         anchors.centerIn: parent } }
 
-                Rectangle { id: _03; width: 70; height: 70
+                Rectangle { objectName: "03"; width: 70; height: 70
                     color: "lightgreen"
 
                     Text { text: "0"
                         font.pointSize: 30
                         anchors.centerIn: parent } }
 
-                Rectangle { id: _10; width: 70; height: 70
+                Rectangle { objectName: "10"; width: 70; height: 70
                     color: "lightgreen"
 
                     Text { text: "0"
                         font.pointSize: 30
                         anchors.centerIn: parent } }
 
-                Rectangle { id: _11; width: 70; height: 70
+                Rectangle { objectName: "11"; width: 70; height: 70
                     color: "lightgreen"
 
                     Text { text: "0"
                         font.pointSize: 30
                         anchors.centerIn: parent } }
 
-                Rectangle { id: _12; width: 70; height: 70
+                Rectangle { objectName: "12"; width: 70; height: 70
                     color: "lightgreen"
 
                     Text { text: "0"
                         font.pointSize: 30
                         anchors.centerIn: parent } }
 
-                Rectangle { id: _13; width: 70; height: 70
+                Rectangle { objectName: "13"; width: 70; height: 70
                     color: "lightgreen"
 
                     Text { text: "0"
                         font.pointSize: 30
                         anchors.centerIn: parent } }
 
-                Rectangle { id: _20; width: 70; height: 70
+                Rectangle { objectName: "20"; width: 70; height: 70
                     color: "lightgreen"
 
                     Text { text: "0"
                         font.pointSize: 30
                         anchors.centerIn: parent } }
 
-                Rectangle { id: _21; width: 70; height: 70
+                Rectangle { objectName: "21"; width: 70; height: 70
                     color: "lightgreen"
 
                     Text { text: "0"
                         font.pointSize: 30
                         anchors.centerIn: parent } }
 
-                Rectangle { id: _22; width: 70; height: 70
+                Rectangle { objectName: "22"; width: 70; height: 70
                     color: "lightgreen"
 
                     Text { text: "0"
                         font.pointSize: 30
                         anchors.centerIn: parent } }
 
-                Rectangle { id: _23; width: 70; height: 70
+                Rectangle { objectName: "23"; width: 70; height: 70
                     color: "lightgreen"
 
                     Text { text: "0"
                         font.pointSize: 30
                         anchors.centerIn: parent } }
 
-                Rectangle { id: _30; width: 70; height: 70
+                Rectangle { objectName: "30"; width: 70; height: 70
                     color: "lightgreen"
 
                     Text { text: "0"
                         font.pointSize: 30
                         anchors.centerIn: parent } }
 
-                Rectangle { id: _31; width: 70; height: 70
+                Rectangle { objectName: "31"; width: 70; height: 70
                     color: "lightgreen"
 
                     Text { text: "0"
                         font.pointSize: 30
                         anchors.centerIn: parent } }
 
-                Rectangle { id: _32; width: 70; height: 70
+                Rectangle { objectName: "32"; width: 70; height: 70
                     color: "lightgreen"
 
                     Text { text: "0"
                         font.pointSize: 30
                         anchors.centerIn: parent } }
 
-                Rectangle { id: _33; width: 70; height: 70
+                Rectangle { objectName: "33"; width: 70; height: 70
                     color: "lightgreen"
 
                     Text { text: "0"

@@ -1,5 +1,6 @@
 #include "game.h"
 
+
 game::game(QObject *parent) : QObject(parent)
 {
     init_grid(mat,DIM,DIM);
