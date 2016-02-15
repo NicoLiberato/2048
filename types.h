@@ -8,12 +8,11 @@
 #define DIM 4 // 4x4 grid
 
 static int mat[DIM][DIM];
-int temp1[DIM];
-int temp2[DIM];
-int temp3[DIM];
-int temp4[DIM];
-int choice = 0;
-
+static int temp1[DIM];
+static int temp2[DIM];
+static int temp3[DIM];
+static int temp4[DIM];
+static int choice = 0;
 
 // basic furctions of the game -> to connect with proper callbacks
 void init_grid(int arr[][DIM], int M, int N);

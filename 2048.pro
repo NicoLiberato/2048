@@ -5,7 +5,7 @@ QT += qml quick
 CONFIG += c++11
 
 SOURCES += main.cpp \
-    play2048.cpp
+    game.cpp
 
 RESOURCES += qml.qrc
 
@@ -17,4 +17,4 @@ include(deployment.pri)
 
 HEADERS += \
     types.h \
-    play2048.h
+    game.h
