@@ -10,6 +10,7 @@ class game : public QObject
 {
     Q_OBJECT
 public:
+
     explicit game(QObject *parent = 0);
     void init_grid(int arr[][DIM], int M, int N);
     void print_grid(int arr[][DIM], int M, int N);
@@ -21,6 +22,8 @@ public:
     int moveArray(int a[],int max_num);
     void rotateGrid(int arr[][DIM]);
     void swap(int *a, int *b);
+
+
 
 signals:
 

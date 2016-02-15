@@ -2,6 +2,7 @@
 
 game::game(QObject *parent) : QObject(parent)
 {
+    init_grid(mat,DIM,DIM);
 
 }
 /*
@@ -72,6 +73,7 @@ int game::collapseArray(int a[],int max_num){
  *
 */
 void game::init_grid(int arr[][DIM], int M, int N){
+    qDebug("[DEBUG]: init_grid called");
     int i, j;
 
     for(i=0; i< M ; i++)
@@ -89,6 +91,7 @@ void game::init_grid(int arr[][DIM], int M, int N){
  *
 */
 void game::print_grid(int arr[][DIM], int M, int N){
+    qDebug("[DEBUG]: print_grid called");
     int i, j;
     for(i=0; i< M ; i++)
     {

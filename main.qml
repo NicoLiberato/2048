@@ -39,14 +39,118 @@ ApplicationWindow {
             x: 1; y: 2
             rows: 4; columns: 4; spacing: 10
 
-            Repeater { model: 24
-                Rectangle { width: 70; height: 70
+
+                Rectangle { id: _00; width: 70; height: 70
                     color: "lightgreen"
 
                     Text { text: "0"
                         font.pointSize: 30
                         anchors.centerIn: parent } }
-            }
+
+                Rectangle { id: _01; width: 70; height: 70
+                    color: "lightgreen"
+
+                    Text { text: "0"
+                        font.pointSize: 30
+                        anchors.centerIn: parent } }
+
+                Rectangle { id: _02; width: 70; height: 70
+                    color: "lightgreen"
+
+                    Text { text: "0"
+                        font.pointSize: 30
+                        anchors.centerIn: parent } }
+
+                Rectangle { id: _03; width: 70; height: 70
+                    color: "lightgreen"
+
+                    Text { text: "0"
+                        font.pointSize: 30
+                        anchors.centerIn: parent } }
+
+                Rectangle { id: _10; width: 70; height: 70
+                    color: "lightgreen"
+
+                    Text { text: "0"
+                        font.pointSize: 30
+                        anchors.centerIn: parent } }
+
+                Rectangle { id: _11; width: 70; height: 70
+                    color: "lightgreen"
+
+                    Text { text: "0"
+                        font.pointSize: 30
+                        anchors.centerIn: parent } }
+
+                Rectangle { id: _12; width: 70; height: 70
+                    color: "lightgreen"
+
+                    Text { text: "0"
+                        font.pointSize: 30
+                        anchors.centerIn: parent } }
+
+                Rectangle { id: _13; width: 70; height: 70
+                    color: "lightgreen"
+
+                    Text { text: "0"
+                        font.pointSize: 30
+                        anchors.centerIn: parent } }
+
+                Rectangle { id: _20; width: 70; height: 70
+                    color: "lightgreen"
+
+                    Text { text: "0"
+                        font.pointSize: 30
+                        anchors.centerIn: parent } }
+
+                Rectangle { id: _21; width: 70; height: 70
+                    color: "lightgreen"
+
+                    Text { text: "0"
+                        font.pointSize: 30
+                        anchors.centerIn: parent } }
+
+                Rectangle { id: _22; width: 70; height: 70
+                    color: "lightgreen"
+
+                    Text { text: "0"
+                        font.pointSize: 30
+                        anchors.centerIn: parent } }
+
+                Rectangle { id: _23; width: 70; height: 70
+                    color: "lightgreen"
+
+                    Text { text: "0"
+                        font.pointSize: 30
+                        anchors.centerIn: parent } }
+
+                Rectangle { id: _30; width: 70; height: 70
+                    color: "lightgreen"
+
+                    Text { text: "0"
+                        font.pointSize: 30
+                        anchors.centerIn: parent } }
+
+                Rectangle { id: _31; width: 70; height: 70
+                    color: "lightgreen"
+
+                    Text { text: "0"
+                        font.pointSize: 30
+                        anchors.centerIn: parent } }
+
+                Rectangle { id: _32; width: 70; height: 70
+                    color: "lightgreen"
+
+                    Text { text: "0"
+                        font.pointSize: 30
+                        anchors.centerIn: parent } }
+
+                Rectangle { id: _33; width: 70; height: 70
+                    color: "lightgreen"
+
+                    Text { text: "0"
+                        font.pointSize: 30
+                        anchors.centerIn: parent } }
 
         }
     }
