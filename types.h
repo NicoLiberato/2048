@@ -7,8 +7,9 @@
 
 #define DIM 4 // 4x4 grid
 
-static int mat[DIM][DIM];
 static int choice;
+
+static int mat[DIM][DIM];
 
 static int temp1[DIM];
 static int temp2[DIM];

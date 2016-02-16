@@ -14,7 +14,7 @@ public:
     explicit game(QObject *parent = 0);
     void init_grid(int arr[][DIM], int M, int N);
     void print_grid(int arr[][DIM], int M, int N);
-    void random_grid(int arr[][DIM], int M, int N);
+    void random_grid(int arr[][DIM]);
     void leftAction(int arr[][DIM], int M, int N);
     void upAction(int arr[][DIM], int M, int N);
     void mergeArray(int arr[][DIM], int M, int N);
@@ -22,6 +22,7 @@ public:
     int moveArray(int a[],int max_num);
     void rotateGrid(int arr[][DIM]);
     void swap(int *a, int *b);
+
 
 
 

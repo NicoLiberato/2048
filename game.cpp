@@ -3,7 +3,53 @@
 
 game::game(QObject *parent) : QObject(parent)
 {
+
     init_grid(mat,DIM,DIM);
+    random_grid(mat);
+    print_grid(mat,DIM,DIM);
+
+    puts("---------------- 2048-------------------------------------------------");
+    puts("press 'a'' for left move, 'd' for rigth move, 'w' for up, 'x' for down ");
+    puts("press 'q' for quit ");
+
+    do
+    {
+
+
+        choice = getchar();
+
+        switch (choice) {
+        case 'a':
+            leftAction(mat,DIM,DIM);
+            print_grid(mat,DIM,DIM);
+            random_grid(mat);
+            print_grid(mat,DIM,DIM);
+            break;
+        case 'd':
+            leftAction(mat,DIM,DIM);
+            random_grid(mat);
+            rotateGrid(mat);
+            rotateGrid(mat);
+            print_grid(mat,DIM,DIM);
+            break;
+        case 'w':
+            upAction(mat,DIM,DIM);
+            random_grid(mat);
+            print_grid(mat,DIM,DIM);
+            break;
+        case 'x':
+            upAction(mat,DIM,DIM);
+            random_grid(mat);
+            rotateGrid(mat);
+            rotateGrid(mat);
+            print_grid(mat,DIM,DIM);
+            break;
+        default:
+            break;
+        }
+
+    } while (choice != 'q');
+    exit(0);
 
 }
 /*
@@ -113,7 +159,7 @@ void game::print_grid(int arr[][DIM], int M, int N){
  *                    is on the way
 */
 void game::leftAction(int arr[][DIM], int M, int N){
-
+     qDebug("leftAction called");
     int ret,i;
 
     // first row
@@ -256,18 +302,37 @@ void game::upAction(int arr[][DIM], int M, int N){
 
 /*
  *    Function name : random_grid
- *       description: randomize the board, need to be improved
+ *       description: randomize the board-
  *
 */
-void game::random_grid(int arr[][DIM], int M, int N){
-    srand(time(NULL));
-    int pos1 = rand() % (DIM); // randomize position
-    int pos2 = rand() % (DIM);
-    int pos3 = rand() % (DIM);
-    int pos4 = rand() % (DIM);
+void game::random_grid(int arr[][DIM]) {
+    static bool initialized = false;
+    int x,y;
+    int r,len=0;
+    int n,list[DIM*DIM][DIM];
 
-    arr[pos1][pos2] = 2;
-    arr[pos3][pos4] = 2;
+    if (!initialized) {
+        srand(time(NULL));
+        initialized = true;
+    }
+
+    for (x=0;x<DIM;x++) {
+        for (y=0;y<DIM;y++) {
+            if (arr[x][y]==0) {
+                list[len][0]=x;
+                list[len][1]=y;
+                len++;
+            }
+        }
+    }
+
+    if (len>0) {
+        r = rand()%len;
+        x = list[r][0];
+        y = list[r][1];
+        n = (rand()%10)/9+1;
+        arr[x][y]=2;
+    }
 }
 
 /*
