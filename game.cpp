@@ -1,15 +1,12 @@
 #include "game.h"
 
 
+
 game::game(QObject *parent) : QObject(parent)
 {
 
+    createBanner();
     static int score = 0;
-    puts("######################2048#############################################");
-    puts("#                                                                     #");
-    puts("press 'a'' for left move, 'd' for rigth move, 'w' for up, 'x' for down ");
-    puts("#                                                                     #");
-    puts("################## press 'q' for quit #################################");
 
 
     init_grid(mat,DIM,DIM);
@@ -25,6 +22,8 @@ game::game(QObject *parent) : QObject(parent)
         case 'a':
             leftAction(mat,DIM,DIM);
             random_grid(mat);
+            print_grid(mat,DIM,DIM);
+            find_2048(mat,DIM,DIM);
             print_grid(mat,DIM,DIM);
             break;
         case 'd':
@@ -54,6 +53,27 @@ game::game(QObject *parent) : QObject(parent)
     exit(0);
 
 }
+
+/*
+ *    Function name : createBanner
+ *       description: just for fun
+*/
+void game::createBanner()
+{
+    puts("		 ____   ___  _  _    ___                                        ");
+    puts("		|___ \ / _ \| || |   ( _ )                                      ");
+    puts("		  __) | | | | || |   / _ \                                      ");
+    puts("		 / __/| |_| |__   | (_) |                                       ");
+    puts("		|_____|\___/   |_|   \___/                                      ");
+    puts("                                                                     ");
+    puts("                                                                     ");
+    puts("                    a = left                                         ");
+    puts("                    d = rigth                                        ");
+    puts("                    w = up                                           ");
+    puts("                    z = down        q = quit                         ");
+
+}
+
 /*
  *    Function name : swap
  *       description: boring function for swap two positions in an array
@@ -145,16 +165,45 @@ void game::print_grid(int arr[][DIM], int M, int N){
     int i, j;
     for(i=0; i< M ; i++)
     {
+        puts("-------------------");
         for ( j=0; j < N; j++)
         {
-            printf("%3d",arr[i][j]);
+            printf("| %2d ",arr[i][j]);
         }
         printf("\n");
     }
+        puts("--------------------\n");
     printf("----score:-%d-\n",score);
-    puts("--------------\n");
+
 }
 
+
+/*
+ *    Function name : find_2048
+ *       description: decide if you win or lose
+ *
+*/
+void game::find_2048(int arr[][DIM], int M, int N){
+    int i, j;
+    int magic[DIM] = {2,0,4,8};
+    for(i=0; i< M ; i++)
+    {
+
+        for ( j=0; j < N; j++)
+        {
+            if (arr[i][j] == magic[i])
+            {
+                printf("You win!");
+                exit(0);
+            };
+
+        }
+        rotateGrid(arr);
+    }
+
+    printf("----score:-%d-\n",score);
+
+}
 
 /*
  *    Function name : leftAction
