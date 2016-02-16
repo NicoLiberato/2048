@@ -190,7 +190,6 @@ void game::print_grid(int arr[][DIM], int M, int N){
 int game::find_2048(int arr[][DIM], int M, int N){
     int magic[DIM] = {2,0,4,8};
     int check = 0;
-    printf("-------\n");
 
     for (int j = 0; j < N; j++){
         for (int i= 0; i < N; i++){
