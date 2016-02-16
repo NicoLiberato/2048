@@ -4,20 +4,18 @@
 #include <QObject>
 #include <QQuickItem>
 
+// define for the UX... to be used later
+//#include <QQmlApplicationEngine>
+//#include <QtQml/QQmlEngine>
+//#include <QtQuick/QQuickView>
+//#include <QtDeclarative/QDeclarativeEngine>
+
+
 // c libraries
 #include <stdio.h>
 #include <stdlib.h>
 
 #define DIM 4 // 4x4 grid
-
-static int choice;
-
-static int mat[DIM][DIM];
-
-static int temp1[DIM];
-static int temp2[DIM];
-static int temp3[DIM];
-static int temp4[DIM];
 
 class game : public QObject
 {
@@ -36,12 +34,20 @@ public:
     void rotateGrid(int arr[][DIM]);
     void swap(int *a, int *b);
 
-
-
-
 signals:
 
 public slots:
 };
+
+static int choice;
+
+static int mat[DIM][DIM];
+
+static int temp1[DIM];
+static int temp2[DIM];
+static int temp3[DIM];
+static int temp4[DIM];
+
+static int score ;
 
 #endif // GAME_H
