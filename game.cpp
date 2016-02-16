@@ -23,8 +23,6 @@ game::game(QObject *parent) : QObject(parent)
             leftAction(mat,DIM,DIM);
             random_grid(mat);
             print_grid(mat,DIM,DIM);
-            find_2048(mat,DIM,DIM);
-            print_grid(mat,DIM,DIM);
             break;
         case 'd':
             leftAction(mat,DIM,DIM);
@@ -180,7 +178,7 @@ void game::print_grid(int arr[][DIM], int M, int N){
 
 /*
  *    Function name : find_2048
- *       description: decide if you win or lose
+ *       description: find 2048 sequence
  *
 */
 void game::find_2048(int arr[][DIM], int M, int N){
@@ -203,6 +201,20 @@ void game::find_2048(int arr[][DIM], int M, int N){
 
     printf("----score:-%d-\n",score);
 
+}
+
+/*
+ *    Function name : gameStatus
+ *       description: decide if you win or lose
+ *
+*/
+void game::gameStatus(int arr[][DIM], int M, int N){
+
+    // pseudocode
+    // check if arr = 0 , you lose
+    // check if is not possible to have a move, you lose
+    // use find_2048 and rotate the board to check in all dimensions
+    // return win or lose.
 }
 
 /*
