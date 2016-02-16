@@ -6,14 +6,8 @@
 int main(int argc, char *argv[])
 {
     QGuiApplication app(argc, argv);
-
-    //The QML interface is deactivated at moment
-
+    game newGame;
     /*
-     *   As discussed, this part will manage
-     *   the QML interface, in second phase of
-     *   the project
-     *
      *
     QQmlApplicationEngine engine;
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
@@ -28,9 +22,6 @@ int main(int argc, char *argv[])
     if (rect)
         rect->setProperty("color", "red");
     */
-
-    game aGame;
-
     return app.exec();
 }
 

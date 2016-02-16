@@ -4,24 +4,26 @@
 game::game(QObject *parent) : QObject(parent)
 {
 
+    static int score = 0;
+    puts("######################2048#############################################");
+    puts("#                                                                     #");
+    puts("press 'a'' for left move, 'd' for rigth move, 'w' for up, 'x' for down ");
+    puts("#                                                                     #");
+    puts("################## press 'q' for quit #################################");
+
+
     init_grid(mat,DIM,DIM);
     random_grid(mat);
     print_grid(mat,DIM,DIM);
 
-    puts("---------------- 2048-------------------------------------------------");
-    puts("press 'a'' for left move, 'd' for rigth move, 'w' for up, 'x' for down ");
-    puts("press 'q' for quit ");
-
     do
     {
-
 
         choice = getchar();
 
         switch (choice) {
         case 'a':
             leftAction(mat,DIM,DIM);
-            print_grid(mat,DIM,DIM);
             random_grid(mat);
             print_grid(mat,DIM,DIM);
             break;
@@ -103,13 +105,16 @@ int game::moveArray(int a[],int max_num){
 int game::collapseArray(int a[],int max_num){
 
     int i = 0;
+
     for (i = 0; i < max_num ; i++){
-        if (a[i] == a[i+1])
+        if ((a[i] == a[i+1]) && (a[i] != 0) &&  (a[i+1] != 0))
         {
             a[i] += a[i+1];
             a[i+1] = 0;
+            score+=a[i];
         }
     }
+
     return 0;
 }
 
@@ -120,7 +125,6 @@ int game::collapseArray(int a[],int max_num){
  *
 */
 void game::init_grid(int arr[][DIM], int M, int N){
-    qDebug("[DEBUG]: init_grid called");
     int i, j;
 
     for(i=0; i< M ; i++)
@@ -138,7 +142,6 @@ void game::init_grid(int arr[][DIM], int M, int N){
  *
 */
 void game::print_grid(int arr[][DIM], int M, int N){
-    qDebug("[DEBUG]: print_grid called");
     int i, j;
     for(i=0; i< M ; i++)
     {
@@ -148,6 +151,7 @@ void game::print_grid(int arr[][DIM], int M, int N){
         }
         printf("\n");
     }
+    printf("----score:-%d-\n",score);
     puts("--------------\n");
 }
 
@@ -159,7 +163,6 @@ void game::print_grid(int arr[][DIM], int M, int N){
  *                    is on the way
 */
 void game::leftAction(int arr[][DIM], int M, int N){
-     qDebug("leftAction called");
     int ret,i;
 
     // first row
