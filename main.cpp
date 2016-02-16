@@ -5,8 +5,6 @@
 //#include <QtQuick/QQuickView>
 //#include <QtDeclarative/QDeclarativeEngine>
 
-
-#include "types.h"
 #include "game.h"
 
 

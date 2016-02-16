@@ -4,7 +4,20 @@
 #include <QObject>
 #include <QQuickItem>
 
-#include "types.h"
+// c libraries
+#include <stdio.h>
+#include <stdlib.h>
+
+#define DIM 4 // 4x4 grid
+
+static int choice;
+
+static int mat[DIM][DIM];
+
+static int temp1[DIM];
+static int temp2[DIM];
+static int temp3[DIM];
+static int temp4[DIM];
 
 class game : public QObject
 {
