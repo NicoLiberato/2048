@@ -292,7 +292,6 @@ void game::leftAction(int arr[][DIM], int M, int N){
     }
 }
 
-
 /*
  *    Function name : upAction
  *       description: same as leftAction, but for the top of the grid

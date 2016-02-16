@@ -5,5 +5,5 @@ digraph "Graphical Class Hierarchy"
   rankdir="LR";
   Node1 [label="QObject",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="play2048",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classplay2048.html"];
+  Node2 [label="game",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classgame.html"];
 }
