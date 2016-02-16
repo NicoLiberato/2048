@@ -199,7 +199,6 @@ int game::find_2048(int arr[][DIM], int M, int N){
         }
     }
 
-    printf("----score:-%d-\n",score);
     return check;
 }
 
