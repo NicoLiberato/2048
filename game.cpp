@@ -1,7 +1,6 @@
 #include "game.h"
 
 
-
 game::game(QObject *parent) : QObject(parent)
 {
 
@@ -23,6 +22,7 @@ game::game(QObject *parent) : QObject(parent)
             leftAction(mat,DIM,DIM);
             random_grid(mat);
             print_grid(mat,DIM,DIM);
+            gameStatus(mat,DIM,DIM);
             break;
         case 'd':
             leftAction(mat,DIM,DIM);
@@ -30,11 +30,13 @@ game::game(QObject *parent) : QObject(parent)
             rotateGrid(mat);
             rotateGrid(mat);
             print_grid(mat,DIM,DIM);
+            gameStatus(mat,DIM,DIM);
             break;
         case 'w':
             upAction(mat,DIM,DIM);
             random_grid(mat);
             print_grid(mat,DIM,DIM);
+            gameStatus(mat,DIM,DIM);
             break;
         case 'x':
             upAction(mat,DIM,DIM);
@@ -42,8 +44,12 @@ game::game(QObject *parent) : QObject(parent)
             rotateGrid(mat);
             rotateGrid(mat);
             print_grid(mat,DIM,DIM);
+            gameStatus(mat,DIM,DIM);
             break;
+        case 't':
+            gameStatus(mat,DIM,DIM);
         default:
+            //printf("[2048]: only w,a,d,x are accepted.");
             break;
         }
 
@@ -181,26 +187,20 @@ void game::print_grid(int arr[][DIM], int M, int N){
  *       description: find 2048 sequence
  *
 */
-void game::find_2048(int arr[][DIM], int M, int N){
-    int i, j;
+int game::find_2048(int arr[][DIM], int M, int N){
     int magic[DIM] = {2,0,4,8};
-    for(i=0; i< M ; i++)
-    {
+    int check = 0;
+    printf("-------\n");
 
-        for ( j=0; j < N; j++)
-        {
-            if (arr[i][j] == magic[i])
-            {
-                printf("You win!");
-                exit(0);
-            };
-
+    for (int j = 0; j < N; j++){
+        for (int i= 0; i < N; i++){
+            (arr[j][i] == magic[i])? check = 1 : check = 0;
+            check *= check;
         }
-        rotateGrid(arr);
     }
 
     printf("----score:-%d-\n",score);
-
+    return check;
 }
 
 /*
@@ -209,10 +209,20 @@ void game::find_2048(int arr[][DIM], int M, int N){
  *
 */
 void game::gameStatus(int arr[][DIM], int M, int N){
+    int status;
 
     // pseudocode
     // check if arr = 0 , you lose
     // check if is not possible to have a move, you lose
+    int i = 0;
+    while ( i < DIM){
+        if (find_2048(arr,DIM,DIM) == 1){
+            printf("you win");
+            exit(0);
+        }
+        rotateGrid(arr);
+        i++;
+    }
     // use find_2048 and rotate the board to check in all dimensions
     // return win or lose.
 }

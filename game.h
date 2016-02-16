@@ -35,7 +35,7 @@ public:
     void createBanner();
     void swap(int *a, int *b);
     void gameStatus(int arr[][DIM], int M, int N);
-    void find_2048(int arr[][DIM], int M, int N);
+    int find_2048(int arr[][DIM], int M, int N);
 
 signals:
 
@@ -43,7 +43,6 @@ public slots:
 };
 
 static int choice;
-
 
 
 static int mat[DIM][DIM];
